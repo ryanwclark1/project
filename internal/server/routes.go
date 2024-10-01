@@ -10,6 +10,7 @@ import (
 	"github.com/a-h/templ"
 	"github.com/coder/websocket"
 	"github.com/ryanwclark1/the-ui/cmd/web"
+	"github.com/ryanwclark1/the-ui/cmd/web/pages/forms"
 )
 
 func (s *Server) RegisterRoutes() http.Handler {
@@ -28,6 +29,13 @@ func (s *Server) RegisterRoutes() http.Handler {
 	mux.Handle("/web", templ.Handler(web.HelloForm()))
 	mux.HandleFunc("/hello", web.HelloWebHandler)
 
+	mux.HandleFunc("/forms/layout", s.LayoutFormHandler)
+	mux.HandleFunc("/forms/input", s.InputHandler)
+	mux.HandleFunc("/forms/checkbox", s.CheckBoxHandler)
+	mux.HandleFunc("/forms/radio", s.RadioHandler)
+	mux.HandleFunc("/forms/textarea", s.TextAreaHandler)
+	mux.HandleFunc("/forms/switch", s.SwitchHandler)
+	mux.HandleFunc("/forms/select", s.SelectHandler)
 
 	return mux
 }
@@ -44,7 +52,30 @@ func (s *Server) HelloWorldHandler(w http.ResponseWriter, r *http.Request) {
 	_, _ = w.Write(jsonResp)
 }
 
-// Add the new handler for the main page
+// Handler for the LayoutForm component
+func (s *Server) LayoutFormHandler(w http.ResponseWriter, r *http.Request) {
+    component := LayoutForm()
+    err := templ.Render(w, component)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusInternalServerError)
+    }
+}
+
+// Handler for the Input component
+func (s *Server) InputHandler(w http.ResponseWriter, r *http.Request) {
+    component := InputForm()
+    err := templ.Render(w, component)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusInternalServerError)
+    }
+}
+
+// func LayoutFormHandler(w http.ResponseWriter, r *http.Request) {
+//     tmpl := template.Must(template.ParseFiles("templates/forms/layout.html"))
+//     tmpl.Execute(w, nil)
+// }
+
+
 func (s *Server) mainHandler(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	if err != nil {

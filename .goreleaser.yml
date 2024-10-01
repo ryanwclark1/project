@@ -8,7 +8,7 @@ env:
 
 builds:
 - binary: "{{ .ProjectName }}"
-  main: ./cmd/api
+  main: ./cmd/server
   goos:
   - darwin
   - linux
@@ -19,7 +19,7 @@ builds:
   env:
   - CGO_ENABLED=0
   ldflags:
-  - -s -w -X {{.Env.PACKAGE_PATH}}={{.Version}} 
+  - -s -w -X {{.Env.PACKAGE_PATH}}={{.Version}}
 release:
   prerelease: auto
 
