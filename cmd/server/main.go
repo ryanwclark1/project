@@ -6,7 +6,7 @@ import (
     "os"
     "github.com/ryanwclark1/the-ui/internal/app"
     "github.com/ryanwclark1/the-ui/pkg/env"
-    "github.com/ryanwclark1/the-ui/pkg/flags"
+
 )
 
 func main() {

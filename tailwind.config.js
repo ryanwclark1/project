@@ -4,8 +4,8 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   content: [
     // 'internal/templates/*.templ',
-    "./cmd/web/**/*.html",
-    "./cmd/web/**/*.templ",
+    "./templates/**/*.html",
+    "./templates/**/*.templ",
   ],
   theme: {
     container: {

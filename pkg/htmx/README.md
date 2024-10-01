@@ -18,7 +18,7 @@ Has basic [integration](#templ-integration) with [templ](https://templ.guide/) c
 import (
 	"net/http"
 
-	"github.com/angelofallars/htmx-go"
+	"github.com/ryanwclark1/the-ui/pkgs/htmx"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -31,20 +31,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			Write(w)
 	}
 }
-```
-
-## Installation
-
-Use go get.
-
-```sh
-go get github.com/angelofallars/htmx-go
-```
-
-Then import htmx-go:
-
-```go
-import "github.com/angelofallars/htmx-go"
 ```
 
 ## HTMX Requests
@@ -81,9 +67,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 ```
 
 ## HTMX responses
-
-htmx-go takes inspiration from [Lip Gloss](https://github.com/charmbracelet/lipgloss)
-for a declarative way of specifying HTMX response headers.
+Utilizes a declarative way of specifying HTMX response headers.
 
 ### Basic usage
 

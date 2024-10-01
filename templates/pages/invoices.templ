@@ -1,0 +1,115 @@
+package pages
+
+templ Invoices() {
+  <!-- start:Page content -->
+  <div class="h-full bg-gray-200 p-8">
+    <!-- start::Invoce 1 -->
+    <div class="w-[793px] h-[1122px] flex flex-col justify-between bg-white mx-auto shadow-xl mt-12 p-[72px]">
+      <div>
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-3xl tracking-wide">Invoice</p>
+            <p class="text-xl font-bold tracking-wide mt-4">Company Name</p>
+            <p class="text-sm text-gray-700">3730 Coulter Lane</p>
+            <p class="text-sm text-gray-700">Richmond, VA 23224</p>
+          </div>
+          <div>
+            <span class="bg-gray-400 text-2xl text-gray-100 px-3 py-6 rounded-full">Logo</span>
+          </div>
+        </div>
+        <div class="bg-gray-400 w-full h-[1px] my-8"></div>
+        <div class="flex justify-between">
+          <div>
+            <p class="font-bold">Invoice To:</p>
+            <p class="text-gray-700 mt-2">Diana Edwards</p>
+            <p class="text-gray-700">3730 Coulter Lane</p>
+            <p class="text-gray-700">Richmond, VA 23224</p>
+          </div>
+          <div class="flex flex-col space-y-1">
+            <div class="flex items-center">
+              <span class="w-32 font-bold">Invoice No.</span>
+              <span class="text-gray-700">INV-54D3H6C4</span>
+            </div>
+            <div class="flex items-center">
+              <span class="w-32 font-bold">Payment Date</span>
+              <span class="text-gray-700">12 Jan, 2022</span>
+            </div>
+            <div class="flex items-center">
+              <span class="w-32 font-bold">Due Date</span>
+              <span class="text-gray-700">12 Jan, 2022</span>
+            </div>
+            <div class="flex items-center">
+              <span class="w-32 font-bold">Amount (USD)</span>
+              <span class="text-red-600 font-bold">$ 3.470,04</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-24">
+          <table class="w-full">
+            <thead class="h-12 border-y-4 border-gray-500">
+              <th>#</th>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Unit Price</th>
+              <th>Total</th>
+            </thead>
+            <tbody>
+              <tr class="text-gray-700 text-center">
+                <td class="py-2">1</td>
+                <td>Description of first item</td>
+                <td>2</td>
+                <td>$ 234,00</td>
+                <td>$ 468,00</td>
+              </tr>
+              <tr class="text-gray-700 text-center">
+                <td class="py-2">2</td>
+                <td>Description of second item</td>
+                <td>1</td>
+                <td>$ 520,00</td>
+                <td>$ 520,00</td>
+              </tr>
+              <tr class="text-gray-700 text-center">
+                <td class="py-2">3</td>
+                <td>Description of third item</td>
+                <td>5</td>
+                <td>$ 445,00</td>
+                <td>$ 2.225,00</td>
+              </tr>
+              <tr class="border-t-2">
+                <td class="py-2" colspan="5"></td>
+              </tr>
+              <tr class="text-center">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="font-bold">Subtotal</td>
+                <td>$ 3.213,00</td>
+              </tr>
+              <tr class="text-center">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="font-bold">Tax 8%</td>
+                <td>$ 257,04</td>
+              </tr>
+              <tr class="text-center">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-lg font-bold py-2">Invoice Total</td>
+                <td class="text-lg font-bold text-red-600 py-2">$ 3.470,04</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="text-center text-xs text-gray-700">
+        <p>For questions concering this invoice, please contact</p>
+        <p>John Doe, (012) 345 6789, johndoe@example.com</p>
+        <p>www.yourwebaddress.com</p>
+      </div>
+    </div>
+    <!-- end::Invoce 1 -->
+  </div>
+  <!-- end:Page content -->
+}
