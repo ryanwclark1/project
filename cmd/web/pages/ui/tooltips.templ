@@ -1,0 +1,116 @@
+package ui
+
+templ ToolTips() {
+  <!-- start:Page content -->
+  <div class="h-full bg-gray-200 p-8">
+    <div class="bg-white rounded-lg px-8 py-6 overflow-x-scroll custom-scrollbar mb-12">
+      <!-- start::Basic Badges -->
+      <div class="py-2">
+        <h4 class="text-xl capitalize">Tooltips</h4>
+        <div class="mt-12 flex items-center space-x-4">
+          <div x-data="{ tooltip: false }" class="flex items-center justify-center relative">
+            <button @mouseenter="tooltip = true" @mouseleave="tooltip = false"
+              class="w-36 bg-primary text-gray-100 px-6 py-1 rounded">
+              Top
+            </button>
+            <div x-show="tooltip" x-cloak
+              class="w-full absolute bottom-full bg-black text-white text-sm text-center px-2 py-1 mb-1 z-10">
+              Tooltip on top
+            </div>
+          </div>
+
+          <div x-data="{ tooltip: false }" class="flex items-center justify-center relative">
+            <button @mouseenter="tooltip = true" @mouseleave="tooltip = false"
+              class="w-36 bg-primary text-gray-100 px-6 py-1 rounded">
+              Right
+            </button>
+            <div x-show="tooltip" x-cloak
+              class="w-full absolute left-full bg-black text-white text-sm text-center px-2 py-1 ml-1 z-10">
+              Tooltip on right
+            </div>
+          </div>
+
+          <div x-data="{ tooltip: false }" class="flex items-center justify-center relative">
+            <button @mouseenter="tooltip = true" @mouseleave="tooltip = false"
+              class="w-36 bg-primary text-gray-100 px-6 py-1 rounded">
+              Bottom
+            </button>
+            <div x-show="tooltip" x-cloak
+              class="w-full absolute top-full bg-black text-white text-sm text-center px-2 py-1 mt-1 z-10">
+              Tooltip on bottom
+            </div>
+          </div>
+
+          <div x-data="{ tooltip: false }" class="flex items-center justify-center relative">
+            <button @mouseenter="tooltip = true" @mouseleave="tooltip = false"
+              class="w-36 bg-primary text-gray-100 px-6 py-1 rounded">
+              Left
+            </button>
+            <div x-show="tooltip" x-cloak
+              class="w-full absolute right-full bg-black text-white text-sm text-center px-2 py-1 mr-1 z-10">
+              Tooltip on left
+            </div>
+          </div>
+
+        </div>
+        <div class="mt-12 flex items-center space-x-4">
+          <div x-data="{ tooltip: false }" class="flex items-center justify-center relative">
+            <button @mouseenter="tooltip = true" @mouseleave="tooltip = false"
+              class="w-36 bg-primary text-gray-100 px-6 py-1 rounded">
+              On Hover
+            </button>
+            <div x-show="tooltip" x-cloak
+              class="w-full absolute bottom-full bg-black text-white text-sm text-center px-2 py-1 mb-1 z-10">
+              Tooltip on hover
+            </div>
+          </div>
+
+          <div x-data="{ tooltip: false }" class="flex items-center justify-center relative">
+            <button @click="tooltip = !tooltip" @click.away="tooltip = false"
+              class="w-36 bg-primary text-gray-100 px-6 py-1 rounded">
+              On Click
+            </button>
+            <div x-show="tooltip" x-cloak
+              class="w-full absolute bottom-full bg-black text-white text-sm text-center px-2 py-1 mb-1 z-10">
+              Tooltip on click
+            </div>
+          </div>
+
+          <div x-data="{ tooltip: false }" class="flex items-center justify-center relative">
+            <button @mouseenter="tooltip = true" @mouseleave="tooltip = false"
+              class="w-36 bg-primary text-gray-100 px-6 py-1 rounded">
+              Light
+            </button>
+            <div x-show="tooltip" x-cloak
+              class="w-full absolute bottom-full bg-gray-100 text-gray-900 border border-gray-300 text-sm text-center px-2 py-1 mb-1 z-10">
+              Light tooltip
+            </div>
+          </div>
+
+          <div x-data="{ tooltip: false }" class="flex items-center justify-center relative">
+            <button @mouseenter="tooltip = true" @mouseleave="tooltip = false"
+              class="w-36 bg-primary text-gray-100 px-6 py-1 rounded">
+              Dark
+            </button>
+            <div x-show="tooltip" x-cloak
+              class="w-full absolute bottom-full bg-black text-gray-100 border border-gray-300 text-sm text-center px-2 py-1 mb-1 z-10">
+              Dark tooltip
+            </div>
+          </div>
+
+          <div x-data="{ tooltip: false }" class="flex items-center justify-center relative">
+            <button @mouseenter="tooltip = true" @mouseleave="tooltip = false"
+              class="w-36 bg-primary text-gray-100 px-6 py-1 rounded">
+              Rounded
+            </button>
+            <div x-show="tooltip" x-cloak
+              class="w-full absolute bottom-full bg-black text-gray-100 border border-gray-300 text-sm text-center rounded-lg px-2 py-1 mb-1 z-10">
+              Rounded tooltip
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end:Page content -->
+}

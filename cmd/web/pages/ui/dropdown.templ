@@ -1,0 +1,1187 @@
+package ui
+
+templ DropDown() {
+  <!-- start::Page content -->
+  <div class="h-full bg-gray-200 p-8">
+    <div class="bg-white rounded-lg px-8 py-6 overflow-x-scroll custom-scrollbar mb-12 space-y-12">
+      <!-- start::Basic -->
+      <div>
+        <h4 class="text-xl capitalize">Basic</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-8 3xl:grid-cols-9 gap-4 mt-4">
+          <div x-data="{ dropdown: false }">
+            <button @click="dropdown = !dropdown"
+              class="bg-primary hover:bg-primary-dark text-gray-100 py-1 px-8 rounded transition duration-150"
+              :class=" dropdown ? 'bg-primary-dark' : ''">
+              Basic
+            </button>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <button @click="dropdown = !dropdown"
+              class="flex items-center justify-center bg-primary hover:bg-primary-dark text-gray-100 py-1 px-8 rounded transition duration-150 space-x-1"
+              :class=" dropdown ? 'bg-primary-dark' : ''">
+              <span>Icon</span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+            </button>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center bg-primary justify-between text-gray-100 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-primary-dark border-r rounded-l">Split</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-primary-dark rounded-r px-1"
+                :class=" dropdown ? 'bg-primary-dark' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end::Basic -->
+
+      <!-- start::Colors -->
+      <div>
+        <h4 class="text-xl capitalize">Colors</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-8 3xl:grid-cols-9 gap-4 mt-4">
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center bg-primary justify-between text-gray-100 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-primary-dark border-r rounded-l">Primary</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-primary-dark rounded-r px-1"
+                :class=" dropdown ? 'bg-primary-dark' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center bg-secondary justify-between text-gray-100 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-secondary-dark border-r rounded-l">Secondary</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-secondary-dark rounded-r px-1"
+                :class=" dropdown ? 'bg-secondary-dark' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center bg-red-600 justify-between text-gray-100 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-red-700 border-r rounded-l">Red</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-red-700 rounded-r px-1"
+                :class=" dropdown ? 'bg-red-700' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center bg-orange-600 justify-between text-gray-100 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-orange-700 border-r rounded-l">Orange</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-orange-700 rounded-r px-1"
+                :class=" dropdown ? 'bg-orange-700' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center bg-yellow-600 justify-between text-gray-100 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-yellow-700 border-r rounded-l">Yellow</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-yellow-700 rounded-r px-1"
+                :class=" dropdown ? 'bg-yellow-700' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center bg-green-600 justify-between text-gray-100 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-green-700 border-r rounded-l">Green</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-green-700 rounded-r px-1"
+                :class=" dropdown ? 'bg-green-700' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center bg-blue-600 justify-between text-gray-100 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-blue-700 border-r rounded-l">Blue</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-blue-700 rounded-r px-1"
+                :class=" dropdown ? 'bg-blue-700' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center bg-purple-600 justify-between text-gray-100 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-purple-700 border-r rounded-l">Purple</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-purple-700 rounded-r px-1"
+                :class=" dropdown ? 'bg-purple-700' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- end::Colors-->
+
+      <!-- start::Light -->
+      <div>
+        <h4 class="text-xl capitalize">Light</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-8 3xl:grid-cols-9 gap-4 mt-4">
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 bg-primary bg-opacity-30 flex items-center border border-primary  justify-between text-primary rounded transition duration-150">
+              <button
+                class="flex-1 h-full hover:bg-primary hover:bg-opacity-40 border-r border-primary rounded-l">Primary</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-primary hover:bg-opacity-40 rounded-r px-1"
+                :class=" dropdown ? 'bg-primary bg-opacity-40' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 bg-secondary bg-opacity-30 flex items-center border border-secondary  justify-between text-secondary rounded transition duration-150">
+              <button
+                class="flex-1 h-full hover:bg-secondary hover:bg-opacity-40 border-r border-secondary rounded-l">Secondary</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-secondary hover:bg-opacity-40 rounded-r px-1"
+                :class=" dropdown ? 'bg-secondary bg-opacity-40' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 bg-red-200 flex items-center border border-red-400  justify-between text-red-600 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-red-300 border-r border-red-400 rounded-l">Red</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-red-300 rounded-r px-1"
+                :class=" dropdown ? 'bg-red-300' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 bg-orange-200 flex items-center border border-orange-400  justify-between text-orange-600 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-orange-300 border-r border-orange-400 rounded-l">Orange</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-orange-300 rounded-r px-1"
+                :class=" dropdown ? 'bg-orange-300' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 bg-yellow-200 flex items-center border border-yellow-400  justify-between text-yellow-600 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-yellow-300 border-r border-yellow-400 rounded-l">Yellow</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-yellow-300 rounded-r px-1"
+                :class=" dropdown ? 'bg-yellow-300' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 bg-green-200 flex items-center border border-green-400  justify-between text-green-600 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-green-300 border-r border-green-400 rounded-l">Green</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-green-300 rounded-r px-1"
+                :class=" dropdown ? 'bg-green-300' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 bg-blue-200 flex items-center border border-blue-400  justify-between text-blue-600 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-blue-300 border-r border-blue-400 rounded-l">Blue</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-blue-300 rounded-r px-1"
+                :class=" dropdown ? 'bg-blue-300' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 bg-purple-200 flex items-center border border-purple-400  justify-between text-purple-600 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-purple-300 border-r border-purple-400 rounded-l">Purple</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-purple-300 rounded-r px-1"
+                :class=" dropdown ? 'bg-purple-300' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end::Light -->
+
+      <!-- start::Border -->
+      <div>
+        <h4 class="text-xl capitalize">Border</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-8 3xl:grid-cols-9 gap-4 mt-4">
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center border border-primary  justify-between text-primary rounded transition duration-150">
+              <button
+                class="flex-1 h-full hover:bg-primary hover:bg-opacity-20 border-r border-primary rounded-l">Primary</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-primary hover:bg-opacity-20 rounded-r px-1"
+                :class=" dropdown ? 'bg-primary bg-opacity-20' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center border border-secondary  justify-between text-secondary rounded transition duration-150">
+              <button
+                class="flex-1 h-full hover:bg-secondary hover:bg-opacity-20 border-r border-secondary rounded-l">Secondary</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-secondary hover:bg-opacity-20 rounded-r px-1"
+                :class=" dropdown ? 'bg-secondary bg-opacity-20' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center border border-red-600  justify-between text-red-600 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-red-100 border-r border-red-600 rounded-l">Red</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-red-100 rounded-r px-1"
+                :class=" dropdown ? 'bg-red-100' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center border border-orange-600  justify-between text-orange-600 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-orange-100 border-r border-orange-600 rounded-l">Orange</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-orange-100 rounded-r px-1"
+                :class=" dropdown ? 'bg-orange-100' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center border border-yellow-600  justify-between text-yellow-600 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-yellow-100 border-r border-yellow-600 rounded-l">Yellow</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-yellow-100 rounded-r px-1"
+                :class=" dropdown ? 'bg-yellow-100' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center border border-green-600  justify-between text-green-600 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-green-100 border-r border-green-600 rounded-l">Green</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-green-100 rounded-r px-1"
+                :class=" dropdown ? 'bg-green-100' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center border border-blue-600  justify-between text-blue-600 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-blue-100 border-r border-blue-600 rounded-l">Blue</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-blue-100 rounded-r px-1"
+                :class=" dropdown ? 'bg-blue-100' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center border border-purple-600  justify-between text-purple-600 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-purple-100 border-r border-purple-600 rounded-l">Purple</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-purple-100 rounded-r px-1"
+                :class=" dropdown ? 'bg-purple-100' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak x-transition @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end::Border -->
+
+      <!-- start::Position -->
+      <div>
+        <h4 class="text-xl capitalize">Position</h4>
+        <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-8 3xl:grid-cols-9 gap-4 mt-4">
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center bg-primary justify-between text-gray-100 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-primary-dark border-r rounded-l">Down</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-primary-dark rounded-r px-1"
+                :class=" dropdown ? 'bg-primary-dark' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak @click.away="dropdown = false"
+              class="absolute bg-white border border-gray-300 text-gray-700 mt-1 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center bg-primary justify-between text-gray-100 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-primary-dark border-r rounded-l">Up</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-primary-dark rounded-r px-1"
+                :class=" dropdown ? 'bg-primary-dark' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak @click.away="dropdown = false"
+              class="absolute -translate-y-full bg-white border border-gray-300 text-gray-700 -mt-9 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center bg-primary justify-between text-gray-100 rounded transition duration-150">
+              <button class="flex-1 h-full hover:bg-primary-dark border-r rounded-l">Right</button>
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-primary-dark rounded-r px-1"
+                :class=" dropdown ? 'bg-primary-dark' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div x-show="dropdown" x-cloak @click.away="dropdown = false"
+              class="absolute translate-x-full bg-white border border-gray-300 text-gray-700 -ml-9 -mt-8 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div x-data="{ dropdown: false }">
+            <div
+              class="w-36 h-8 flex items-center bg-primary justify-between text-gray-100 rounded transition duration-150">
+              <button @click="dropdown = !dropdown" class="h-full hover:bg-primary-dark rounded-l px-1"
+                :class=" dropdown ? 'bg-primary-dark' : ''">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                  :class=" dropdown ? 'rotate-180 transition duration-200' : 'rotate-0 transition duration-200'"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+              <button class="flex-1 h-full hover:bg-primary-dark border-l rounded-r">Left</button>
+            </div>
+            <div x-show="dropdown" x-cloak @click.away="dropdown = false"
+              class="absolute -translate-x-full bg-white border border-gray-300 text-gray-700 -ml-1 -mt-8 py-2 z-10">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Another Action
+                </a>
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Something else here
+                </a>
+              </div>
+              <hr class="my-2">
+              <div class="flex flex-col">
+                <a @click="dropdown = false" href="#" class="hover:bg-gray-100 py-1 px-4">
+                  Separated link
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end::Position -->
+    </div>
+  </div>
+  <!-- end::Page content -->
+}

@@ -1,0 +1,173 @@
+package faq
+
+templ FaqAccordion() {
+  <!-- start:Page content -->
+  <div class="h-full bg-gray-200 p-8">
+    <div class="bg-white p-4 rounded-lg shadow-xl py-8 mt-12">
+      <h4 class="text-4xl font-bold text-gray-800 tracking-widest uppercase text-center">FAQ</h4>
+      <p class="text-center text-gray-600 text-sm mt-2">Here are some of the frequently asked questions</p>
+
+
+      <div
+        x-data="{ accordion1: false, accordion2: false, accordion3: false, accordion4: false, accordion5: false, accordion6: false}"
+        class="px-2 xl:px-16 mt-12 space-y-4">
+        <div class="px-4">
+          <button @click="
+                                          accordion1 = !accordion1,
+                                          accordion2 = false,
+                                          accordion3 = false,
+                                          accordion4 = false,
+                                          accordion5 = false,
+                                          accordion6 = false
+                                      " class="w-full flex items-center text-left py-2 hover:text-primary"
+            :class="accordion1 ? 'text-primary' : ''">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary transition duration-200"
+              :class="accordion1 ? 'rotate-90' : 'rotate-0'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+            </svg>
+            <span class="ml-2 text-lg" :class="accordion1 ? 'text-primary' : 'text-gray-800'">Lorem ipsum dolor sit
+              amet?</span>
+          </button>
+          <div x-show="accordion1" x-collapse.duration.500ms="" style="overflow: hidden; height: 0px;">
+            <div class="py-2 pl-8 text-gray-500">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, dignissimos. Neque eos, dignissimos
+                provident reiciendis debitis repudiandae commodi perferendis et itaque, similique fugiat cumque impedit
+                iusto vitae dolorum. Nostrum, fugit!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-4">
+          <button @click="
+                                          accordion1 = false,
+                                          accordion2 = !accordion2,
+                                          accordion3 = false,
+                                          accordion4 = false,
+                                          accordion5 = false,
+                                          accordion6 = false
+                                      " class="w-full flex items-center text-left py-2 hover:text-primary"
+            :class="accordion2 ? 'text-primary' : ''">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary transition duration-200"
+              :class="accordion2 ? 'rotate-90' : 'rotate-0'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+            </svg>
+            <span class="ml-2 text-lg" :class="accordion2 ? 'text-primary' : 'text-gray-800'">Consectetur adipisicing
+              elit?</span>
+          </button>
+          <div x-show="accordion2" x-collapse.duration.500ms="" style="overflow: hidden; height: 0px;">
+            <div class="py-2 pl-8 text-gray-500">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, dignissimos. Neque eos, dignissimos
+                provident reiciendis debitis repudiandae commodi perferendis et itaque, similique fugiat cumque impedit
+                iusto vitae dolorum. Nostrum, fugit!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-4">
+          <button @click="
+                                          accordion1 = false,
+                                          accordion2 = false,
+                                          accordion3 = !accordion3,
+                                          accordion4 = false,
+                                          accordion5 = false,
+                                          accordion6 = false
+                                      " class="w-full flex items-center text-left py-2 hover:text-primary"
+            :class="accordion3 ? 'text-primary' : ''">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary transition duration-200"
+              :class="accordion3 ? 'rotate-90' : 'rotate-0'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+            </svg>
+            <span class="ml-2 text-lg" :class="accordion3 ? 'text-primary' : 'text-gray-800'">Neque eos, dignissimos
+              provident reiciendis debitis?</span>
+          </button>
+          <div x-show="accordion3" x-collapse.duration.500ms="" style="overflow: hidden; height: 0px;">
+            <div class="py-2 pl-8 text-gray-500">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, dignissimos. Neque eos, dignissimos
+                provident reiciendis debitis repudiandae commodi perferendis et itaque, similique fugiat cumque impedit
+                iusto vitae dolorum. Nostrum, fugit!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-4">
+          <button @click="
+                                          accordion1 = false,
+                                          accordion2 = false,
+                                          accordion3 = false,
+                                          accordion4 = !accordion4,
+                                          accordion5 = false,
+                                          accordion6 = false
+                                      " class="w-full flex items-center text-left py-2 hover:text-primary"
+            :class="accordion4 ? 'text-primary' : ''">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary transition duration-200"
+              :class="accordion4 ? 'rotate-90' : 'rotate-0'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+            </svg>
+            <span class="ml-2 text-lg" :class="accordion4 ? 'text-primary' : 'text-gray-800'">Repudiandae commodi
+              perferendis et itaque?</span>
+          </button>
+          <div x-show="accordion4" x-collapse.duration.500ms="" style="overflow: hidden; height: 0px;">
+            <div class="py-2 pl-8 text-gray-500">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, dignissimos. Neque eos, dignissimos
+                provident reiciendis debitis repudiandae commodi perferendis et itaque, similique fugiat cumque impedit
+                iusto vitae dolorum. Nostrum, fugit!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-4">
+          <button @click="
+                                          accordion1 = false,
+                                          accordion2 = false,
+                                          accordion3 = false,
+                                          accordion4 = false,
+                                          accordion5 = !accordion5,
+                                          accordion6 = false
+                                      " class="w-full flex items-center text-left py-2 hover:text-primary"
+            :class="accordion5 ? 'text-primary' : ''">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary transition duration-200"
+              :class="accordion5 ? 'rotate-90' : 'rotate-0'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+            </svg>
+            <span class="ml-2 text-lg" :class="accordion5 ? 'text-primary' : 'text-gray-800'">Similique fugiat
+              cumque?</span>
+          </button>
+          <div x-show="accordion5" x-collapse.duration.500ms="" style="overflow: hidden; height: 0px;">
+            <div class="py-2 pl-8 text-gray-500">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, dignissimos. Neque eos, dignissimos
+                provident reiciendis debitis repudiandae commodi perferendis et itaque, similique fugiat cumque impedit
+                iusto vitae dolorum. Nostrum, fugit!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-4">
+          <button @click="
+                                          accordion1 = false,
+                                          accordion2 = false,
+                                          accordion3 = false,
+                                          accordion4 = false,
+                                          accordion5 = false,
+                                          accordion6 = !accordion6
+                                      " class="w-full flex items-center text-left py-2 hover:text-primary"
+            :class="accordion6 ? 'text-primary' : ''">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary transition duration-200"
+              :class="accordion6 ? 'rotate-90' : 'rotate-0'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+            </svg>
+            <span class="ml-2 text-lg" :class="accordion6 ? 'text-primary' : 'text-gray-800'">Impedit iusto vitae dolorum,
+              nostrum fugit?</span>
+          </button>
+          <div x-show="accordion6" x-collapse.duration.500ms="" style="overflow: hidden; height: 0px;">
+            <div class="py-2 pl-8 text-gray-500">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, dignissimos. Neque eos, dignissimos
+                provident reiciendis debitis repudiandae commodi perferendis et itaque, similique fugiat cumque impedit
+                iusto vitae dolorum. Nostrum, fugit!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end:Page content -->
+}

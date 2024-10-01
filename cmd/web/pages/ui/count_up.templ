@@ -1,0 +1,92 @@
+package ui
+
+templ CountUp() {
+<!-- start:Page content -->
+<div class="h-full bg-gray-200 p-8">
+  <div class="bg-white rounded-lg px-8 py-6 overflow-x-scroll custom-scrollbar mb-12">
+    <h4 class="text-xl capitalize">Count Up</h4>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-8">
+      <div class="flex flex-col items-center justify-center space-y-2">
+        <div x-data="{ current: 0, target: 1000, time: 1000}" x-init="() => {
+                                        start = current;
+                                        const interval = Math.max(time / (target - start), 5);
+                                        const step = (target - start) /  (time / interval);
+                                        const handle = setInterval(() => {
+                                            if(current < target)
+                                                current += step
+                                            else {
+                                                clearInterval(handle);
+                                                current = target
+                                            }
+                                            }, interval)
+                                    }" class="flex items-center text-primary text-4xl font-bold space-x-0.5">
+          <span x-text="Math.round(current)"></span>
+        </div>
+        <p class="text-gray-600">Default</p>
+      </div>
+
+      <div class="flex flex-col items-center justify-center space-y-2">
+        <div x-data="{ current: 0, target: 1000, time: 5000}" x-init="() => {
+                                        start = current;
+                                        const interval = Math.max(time / (target - start), 5);
+                                        const step = (target - start) /  (time / interval);
+                                        const handle = setInterval(() => {
+                                            if(current < target)
+                                                current += step
+                                            else {
+                                                clearInterval(handle);
+                                                current = target
+                                            }
+                                            }, interval)
+                                    }" class="flex items-center text-primary text-4xl font-bold space-x-0.5">
+          <span x-text="Math.round(current)"></span>
+        </div>
+        <p class="text-gray-600">Duration 5s</p>
+      </div>
+
+      <div class="flex flex-col items-center justify-center space-y-2">
+        <div x-data="{ current: 0, target: 1000, time: 1000}" x-init="() => {
+                                        start = current;
+                                        const interval = Math.max(time / (target - start), 5);
+                                        const step = (target - start) /  (time / interval);
+                                        const handle = setInterval(() => {
+                                            if(current < target)
+                                                current += step
+                                            else {
+                                                clearInterval(handle);
+                                                current = target
+                                            }
+                                            }, interval)
+                                    }" class="flex items-center text-primary text-4xl font-bold space-x-0.5">
+
+          <span>$</span>
+          <span x-text="Math.round(current)"></span>
+        </div>
+        <p class="text-gray-600">Prefix</p>
+      </div>
+
+      <div class="flex flex-col items-center justify-center space-y-2">
+        <div x-data="{ current: 0, target: 100, time: 1000}" x-init="() => {
+                                        start = current;
+                                        const interval = Math.max(time / (target - start), 5);
+                                        const step = (target - start) /  (time / interval);
+                                        const handle = setInterval(() => {
+                                            if(current < target)
+                                                current += step
+                                            else {
+                                                clearInterval(handle);
+                                                current = target
+                                            }
+                                            }, interval)
+                                    }" class="flex items-center text-primary text-4xl font-bold space-x-0.5">
+
+          <span x-text="Math.round(current)"></span>
+          <span>k</span>
+        </div>
+        <p class="text-gray-600">Suffix</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end:Page content -->
+}

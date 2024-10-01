@@ -1,0 +1,180 @@
+package ui
+
+templ Alerts() {
+  <!-- start:Page content -->
+  <div class="h-full bg-gray-200 p-8">
+    <div class="grid grid-cols-1 gap-16 bg-white rounded-lg px-8 py-6 overflow-x-scroll custom-scrollbar mb-12">
+      <!-- start:Basic -->
+      <div class="w-full xl:w-1/2 flex flex-col space-y-4">
+        <h4 class="text-xl capitalize">Basic</h4>
+        <div class="w-full flex items-center justify-between bg-green-100 px-6 py-2 rounded-lg border border-green-300">
+          <span class="text-green-600 font-bold">Basic success alert</span>
+        </div>
+        <div class="w-full flex items-center justify-between bg-yellow-100 px-6 py-2 rounded-lg border border-yellow-300">
+          <span class="text-yellow-600 font-bold">Basic warning alert</span>
+        </div>
+        <div class="w-full flex items-center justify-between bg-red-100 px-6 py-2 rounded-lg border border-red-300">
+          <span class="text-red-600 font-bold">Basic error alert</span>
+        </div>
+        <div class="w-full flex items-center justify-between bg-blue-100 px-6 py-2 rounded-lg border border-blue-300">
+          <span class="text-blue-600 font-bold">Basic info alert</span>
+        </div>
+      </div>
+      <!-- end:Basic -->
+
+      <!-- start:Dismiss Button -->
+      <div class="w-full xl:w-1/2 flex flex-col space-y-4">
+        <h4 class="text-xl capitalize">Dismiss Button</h4>
+        <div class="w-full flex items-center justify-between bg-green-100 px-6 py-2 rounded-lg border border-green-300">
+          <span class="text-green-600 font-bold">Basic success alert with dismiss button</span>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+        <div class="w-full flex items-center justify-between bg-yellow-100 px-6 py-2 rounded-lg border border-yellow-300">
+          <span class="text-yellow-600 font-bold">Basic warning alert with dismiss button</span>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+        <div class="w-full flex items-center justify-between bg-red-100 px-6 py-2 rounded-lg border border-red-300">
+          <span class="text-red-600 font-bold">Basic error alert with dismiss button</span>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+        <div class="w-full flex items-center justify-between bg-blue-100 px-6 py-2 rounded-lg border border-blue-300">
+          <span class="text-blue-600 font-bold">Basic info alert with dismiss button</span>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+      </div>
+      <!-- end:Dismiss Button -->
+
+      <!-- start:Additional Text -->
+      <div class="w-full xl:w-1/2 flex flex-col space-y-4">
+
+        <h4 class="text-xl capitalize">Additional Text</h4>
+        <div class="w-full flex items-center justify-between bg-green-100 px-6 py-2 rounded-lg border border-green-300">
+          <div class="flex flex-col justify-center">
+            <span class="text-green-600 font-bold">Success</span>
+            <span class="text-sm text-green-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+          </div>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+        <div class="w-full flex items-center justify-between bg-yellow-100 px-6 py-2 rounded-lg border border-yellow-300">
+          <div class="flex flex-col justify-center">
+            <span class="text-yellow-600 font-bold">Warning</span>
+            <span class="text-sm text-yellow-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+          </div>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+        <div class="w-full flex items-center justify-between bg-red-100 px-6 py-2 rounded-lg border border-red-300">
+          <div class="flex flex-col justify-center">
+            <span class="text-red-600 font-bold">Error</span>
+            <span class="text-sm text-red-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+          </div>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+        <div class="w-full flex items-center justify-between bg-blue-100 px-6 py-2 rounded-lg border border-blue-300">
+          <div class="flex flex-col justify-center">
+            <span class="text-blue-600 font-bold">Info</span>
+            <span class="text-sm text-blue-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+          </div>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+      </div>
+      <!-- end:Additional Text -->
+
+      <!-- start:Icon -->
+      <div class="w-full xl:w-1/2 flex flex-col space-y-4">
+
+        <h4 class="text-xl capitalize">Icon</h4>
+        <div class="w-full flex items-center justify-between bg-green-100 px-6 py-2 rounded-lg border border-green-300">
+          <div class="flex items-center space-x-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <div class="flex flex-col justify-center">
+              <span class="text-green-600 font-bold">Success</span>
+              <span class="text-sm text-green-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+            </div>
+          </div>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+        <div class="w-full flex items-center justify-between bg-yellow-100 px-6 py-2 rounded-lg border border-yellow-300">
+          <div class="flex items-center space-x-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <div class="flex flex-col justify-center">
+              <span class="text-yellow-600 font-bold">Warning</span>
+              <span class="text-sm text-yellow-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+            </div>
+          </div>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+        <div class="w-full flex items-center justify-between bg-red-100 px-6 py-2 rounded-lg border border-red-300">
+          <div class="flex items-center space-x-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <div class="flex flex-col justify-center">
+              <span class="text-red-600 font-bold">Error</span>
+              <span class="text-sm text-red-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+            </div>
+          </div>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+        <div class="w-full flex items-center justify-between bg-blue-100 px-6 py-2 rounded-lg border border-blue-300">
+          <div class="flex items-center space-x-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div class="flex flex-col justify-center">
+              <span class="text-blue-600 font-bold">Info</span>
+              <span class="text-sm text-blue-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+            </div>
+          </div>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+      </div>
+      <!-- end:Icon -->
+
+      <!-- start:Transparent Background -->
+      <div class="w-full xl:w-1/2 flex flex-col space-y-4">
+
+        <h4 class="text-xl capitalize">Transparent Background</h4>
+        <div class="w-full flex items-center justify-between px-6 py-2 rounded-lg border border-green-500">
+          <div class="flex flex-col justify-center">
+            <span class="text-green-600 font-bold">Success</span>
+            <span class="text-sm text-green-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+          </div>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+        <div class="w-full flex items-center justify-between px-6 py-2 rounded-lg border border-yellow-500">
+          <div class="flex flex-col justify-center">
+            <span class="text-yellow-600 font-bold">Warning</span>
+            <span class="text-sm text-yellow-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+          </div>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+        <div class="w-full flex items-center justify-between px-6 py-2 rounded-lg border border-red-500">
+          <div class="flex flex-col justify-center">
+            <span class="text-red-600 font-bold">Error</span>
+            <span class="text-sm text-red-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+          </div>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+        <div class="w-full flex items-center justify-between px-6 py-2 rounded-lg border border-blue-500">
+          <div class="flex flex-col justify-center">
+            <span class="text-blue-600 font-bold">Info</span>
+            <span class="text-sm text-blue-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+          </div>
+          <button class="text-xl text-gray-400 hover:text-gray-500" title="Close">&#10005;</button>
+        </div>
+      </div>
+      <!-- end:Transparent Background -->
+    </div>
+  </div>
+  <!-- end:Page content -->
+}

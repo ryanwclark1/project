@@ -1,0 +1,169 @@
+package web
+
+templ NavigationComponents() {
+  <p class="text-xs text-gray-600 mt-10 mb-2 px-6 uppercase">Components</p>
+
+  <!-- start::Menu link -->
+  @NavigationComponentsUserInterface()
+  <!-- end::Menu link -->
+
+  <!-- start::Menu link -->
+  @NavigationComponentsForms()
+  <!-- end::Menu link -->
+
+  <!-- start::Menu link -->
+  <div x-data="{ linkHover: false, linkActive: false }">
+    <div @mouseover="linkHover = true" @mouseleave="linkHover = false" @click="linkActive = !linkActive"
+      class="flex items-center justify-between text-gray-400 hover:text-gray-100 px-6 py-3 cursor-pointer hover:bg-black hover:bg-opacity-30 transition duration-200"
+      :class=" linkActive ? 'bg-black bg-opacity-30 text-gray-100' : ''">
+      <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition duration-200"
+          :class=" linkHover || linkActive ? 'text-gray-100' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+        </svg>
+        <span class="ml-3">Charts</span>
+      </div>
+      <svg class="w-3 h-3 transition duration-300" :class="linkActive ? 'rotate-90' : ''" fill="none"
+        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </div>
+    <!-- start::Submenu -->
+    <ul x-show="linkActive" x-cloak x-collapse.duration.300ms class="text-gray-400">
+      <!-- start::Submenu link -->
+      <li
+        class="pl-10 pr-6 py-2 cursor-pointer hover:bg-black hover:bg-opacity-30 transition duration-200 hover:text-gray-100">
+        <a href="./pages/charts/bar_charts.html" class="flex items-center">
+          <span class="mr-2 text-sm">&bull;</span>
+          <span class="overflow-ellipsis">Bar Charts</span>
+        </a>
+      </li>
+      <!-- end::Submenu link -->
+
+      <!-- start::Submenu link -->
+      <li
+        class="pl-10 pr-6 py-2 cursor-pointer hover:bg-black hover:bg-opacity-30 transition duration-200 hover:text-gray-100">
+        <a href="./pages/charts/line_charts.html" class="flex items-center">
+          <span class="mr-2 text-sm">&bull;</span>
+          <span class="overflow-ellipsis">Line Charts</span>
+        </a>
+      </li>
+      <!-- end::Submenu link -->
+
+      <!-- start::Submenu link -->
+      <li
+        class="pl-10 pr-6 py-2 cursor-pointer hover:bg-black hover:bg-opacity-30 transition duration-200 hover:text-gray-100">
+        <a href="./pages/charts/other_charts.html" class="flex items-center">
+          <span class="mr-2 text-sm">&bull;</span>
+          <span class="overflow-ellipsis">Other Charts</span>
+        </a>
+      </li>
+      <!-- end::Submenu link -->
+    </ul>
+    <!-- end::Submenu -->
+  </div>
+  <!-- end::Menu link -->
+
+  <!-- start::Menu link -->
+  <a x-data="{ linkHover: false }" @mouseover="linkHover = true" @mouseleave="linkHover = false"
+    href="./pages/colors.html"
+    class="flex items-center text-gray-400 px-6 py-3 cursor-pointer hover:bg-black hover:bg-opacity-30 transition duration-200">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition duration-200"
+      :class=" linkHover ? 'text-gray-100' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+    </svg>
+    <span class="ml-3 transition duration-200" :class="linkHover ? 'text-gray-100' : ''">
+      Colors
+    </span>
+  </a>
+  <!-- end::Menu link -->
+
+  <!-- start::Menu link -->
+  <a x-data="{ linkHover: false }" @mouseover="linkHover = true" @mouseleave="linkHover = false" href="./pages/maps.html"
+    class="flex items-center text-gray-400 px-6 py-3 cursor-pointer hover:bg-black hover:bg-opacity-30 transition duration-200">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition duration-200"
+      :class=" linkHover ? 'text-gray-100' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+    <span class="ml-3 transition duration-200" :class="linkHover ? 'text-gray-100' : ''">
+      Maps
+    </span>
+  </a>
+  <!-- end::Menu link -->
+
+  <!-- start::Menu link -->
+  <div x-data="{ linkHover: false, linkActive: false }">
+    <div @mouseover="linkHover = true" @mouseleave="linkHover = false" @click="linkActive = !linkActive"
+      class="flex items-center justify-between text-gray-400 hover:text-gray-100 px-6 py-3 cursor-pointer hover:bg-black hover:bg-opacity-30 transition duration-200"
+      :class=" linkActive ? 'bg-black bg-opacity-30 text-gray-100' : ''">
+      <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition duration-200"
+          :class=" linkHover || linkActive ? 'text-gray-100' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+        </svg>
+        <span class="ml-3">Modals</span>
+      </div>
+      <svg class="w-3 h-3 transition duration-300" :class="linkActive ? 'rotate-90' : ''" fill="none"
+        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </div>
+    <!-- start::Submenu -->
+    <ul x-show="linkActive" x-cloak x-collapse.duration.300ms class="text-gray-400">
+      <!-- start::Submenu link -->
+      <li
+        class="pl-10 pr-6 py-2 cursor-pointer hover:bg-black hover:bg-opacity-30 transition duration-200 hover:text-gray-100">
+        <a href="./pages/modals/info.html" class="flex items-center">
+          <span class="mr-2 text-sm">&bull;</span>
+          <span class="overflow-ellipsis">Info</span>
+        </a>
+      </li>
+      <!-- end::Submenu link -->
+
+      <!-- start::Submenu link -->
+      <li
+        class="pl-10 pr-6 py-2 cursor-pointer hover:bg-black hover:bg-opacity-30 transition duration-200 hover:text-gray-100">
+        <a href="./pages/modals/confirmation.html" class="flex items-center">
+          <span class="mr-2 text-sm">&bull;</span>
+          <span class="overflow-ellipsis">Confirmation</span>
+        </a>
+      </li>
+      <!-- end::Submenu link -->
+
+      <!-- start::Submenu link -->
+      <li
+        class="pl-10 pr-6 py-2 cursor-pointer hover:bg-black hover:bg-opacity-30 transition duration-200 hover:text-gray-100">
+        <a href="./pages/modals/authentication.html" class="flex items-center">
+          <span class="mr-2 text-sm">&bull;</span>
+          <span class="overflow-ellipsis">Authentication</span>
+        </a>
+      </li>
+      <!-- end::Submenu link -->
+    </ul>
+    <!-- end::Submenu -->
+  </div>
+  <!-- end::Menu link -->
+
+  <!-- start::Menu link -->
+  <a x-data="{ linkHover: false }" @mouseover="linkHover = true" @mouseleave="linkHover = false"
+    href="./pages/tables.html"
+    class="flex items-center text-gray-400 px-6 py-3 cursor-pointer hover:bg-black hover:bg-opacity-30 transition duration-200">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition duration-200"
+      :class=" linkHover ? 'text-gray-100' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+    </svg>
+    <span class="ml-3 transition duration-200" :class="linkHover ? 'text-gray-100' : ''">
+      Tables
+    </span>
+  </a>
+  <!-- end::Menu link -->
+
+}
