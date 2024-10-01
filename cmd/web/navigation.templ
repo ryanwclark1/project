@@ -1,8 +1,7 @@
 package web
 
-templ Nav() {
+templ Navigation() {
   <!-- start::Navigation -->
-  // {{ define "nav" }}
   <nav class="py-10 custom-scrollbar">
     <!-- start::Menu link -->
     <a x-data="{ linkHover: false }" @mouseover="linkHover = true" @mouseleave="linkHover = false" href="#"
@@ -523,6 +522,5 @@ templ Nav() {
     <!-- end::Menu link -->
 
   </nav>
-  // {{ end }}
-                  <!-- end::Navigation -->
+  <!-- end::Navigation -->
 }
